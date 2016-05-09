@@ -102,25 +102,25 @@ def AI_Defending(board):
     global AI_pos
     defending = False
     # horizontal
-    if(board[0][5] == "X" and board[0][4] == "X" ) or (board[0][5] == "X" and board[0][4] == "X" and  board[0][3] == "X")or (board[0][4] == "X" and board[0][3] == "X" and  board[0][2] == "X"):
+    if(board[0][5] == "X" and board[0][4] == "X" and  board[0][3] == "X")or (board[0][4] == "X" and board[0][3] == "X" and  board[0][2] == "X")or (board[0][3] == "X" and board[0][2] == "X" and  board[0][1] == "X"):
         AI_pos = '1'
         defending = True
-    if(board[1][5] == "X" and board[1][4] == "X" ) or (board[1][5] == "X" and board[1][4] == "X" and  board[1][3] == "X")or (board[1][4] == "X" and board[1][3] == "X" and  board[1][2] == "X"):
+    if(board[1][5] == "X" and board[1][4] == "X" and  board[1][3] == "X")or (board[1][4] == "X" and board[1][3] == "X" and  board[1][2] == "X")or (board[1][3] == "X" and board[1][2] == "X" and  board[1][1] == "X"):
         AI_pos = '2'
         defending = True
-    if(board[2][5] == "X" and board[2][4] == "X" )or (board[2][5] == "X" and board[2][4] == "X" and  board[2][3] == "X")or (board[2][4] == "X" and board[2][3] == "X" and  board[2][2] == "X"):
+    if(board[2][5] == "X" and board[2][4] == "X" and  board[2][3] == "X")or (board[2][4] == "X" and board[2][3] == "X" and  board[2][2] == "X")or (board[2][3] == "X" and board[2][2] == "X" and  board[2][1] == "X"):
         AI_pos = '3'
         defending = True
-    if(board[3][5] == "X" and board[3][4] == "X" )or (board[3][5] == "X" and board[3][4] == "X" and  board[3][3] == "X")or (board[3][4] == "X" and board[3][3] == "X" and  board[3][2] == "X"):
+    if(board[3][5] == "X" and board[3][4] == "X" and  board[3][3] == "X")or (board[3][4] == "X" and board[3][3] == "X" and  board[3][2] == "X")or (board[3][3] == "X" and board[3][2] == "X" and  board[3][1] == "X"):
         AI_pos = '4'
         defending = True
-    if(board[4][5] == "X" and board[4][4] == "X" )or (board[4][5] == "X" and board[4][4] == "X" and  board[4][3] == "X")or (board[4][4] == "X" and board[4][3] == "X" and  board[4][2] == "X"):
+    if(board[4][5] == "X" and board[4][4] == "X" and  board[4][3] == "X")or (board[4][4] == "X" and board[4][3] == "X" and  board[4][2] == "X")or (board[4][3] == "X" and board[4][2] == "X" and  board[4][1] == "X"):
         AI_pos = '5'
         defending = True
-    if(board[5][5] == "X" and board[5][4] == "X" )or (board[5][5] == "X" and board[5][4] == "X" and  board[5][3] == "X")or (board[5][4] == "X" and board[5][3] == "X" and  board[5][2] == "X"):
+    if(board[5][5] == "X" and board[5][4] == "X" and  board[5][3] == "X")or (board[5][4] == "X" and board[5][3] == "X" and  board[5][2] == "X")or (board[5][3] == "X" and board[5][2] == "X" and  board[5][1] == "X"):
         AI_pos = '6'
         defending = True
-    if(board[6][5] == "X" and board[6][4] == "X" )or (board[6][5] == "X" and board[6][4] == "X" and  board[6][3] == "X")or (board[6][4] == "X" and board[6][3] == "X" and  board[6][2] == "X"):
+    if(board[6][5] == "X" and board[6][4] == "X" and  board[6][3] == "X")or (board[6][4] == "X" and board[6][3] == "X" and  board[6][2] == "X")or (board[6][3] == "X" and board[6][2] == "X" and  board[6][1] == "X"):
         AI_pos = '7'
         defending = True  
     
@@ -223,30 +223,172 @@ def AI_Attacking(board):
         AI_pos = '4'
         attacking = True
     # horizontal
-    for x in range(7):
-        y=0
-        if (board[x-1][y] == 'O' and board[x-1][y-1] == 'O' and board[x-1][y-2] == 'O' and board[x-1][y-3] == ' '):
+    if (board[1][5] == 'O' and board[2][5] == 'O' and board[3][5] == 'O' and board[0][5] == ' '):
             AI_pos =  '1'
             attacking = True
-        if (board[x-1][y] == 'O' and board[x-1][y-1] == 'O' and board[x-1][y-2] == 'O' and board[x-1][y-3] == ' '):
+    if (board[2][5] == 'O' and board[3][5] == 'O' and board[4][5] == 'O' and board[1][5] == ' '):
             AI_pos =  '2'
             attacking = True
+    if (board[3][5] == 'O' and board[4][5] == 'O' and board[5][5] == 'O' and board[2][5] == ' '):
+            AI_pos =  '3'
+            attacking = True
+    if (board[0][5] == 'O' and board[1][5] == 'O' and board[2][5] == 'O' and board[3][5] == ' '):
+            AI_pos =  '4'
+            attacking = True
+    if (board[1][5] == 'O' and board[2][5] == 'O' and board[3][5] == 'O' and board[4][5] == ' '):
+            AI_pos =  '5'
+            attacking = True
+    if (board[2][5] == 'O' and board[3][5] == 'O' and board[4][5] == 'O' and board[5][5] == ' '):
+            AI_pos =  '6'
+            attacking = True
+    if (board[3][5] == 'O' and board[4][5] == 'O' and board[5][5] == 'O' and board[6][5] == ' '):
+            AI_pos =  '7'
+            attacking = True
+    
+    for y in range(5):
+        if (board[1][y-1] == 'O' and board[2][y-1] == 'O' and board[3][y-1] == 'O' and board[0][y-1] == ' '):
+            if(board[0][y])!=' ':
+                AI_pos =  '1'
+                attacking = True
+        if (board[2][y-1] == 'O' and board[3][y-1] == 'O' and board[4][y-1] == 'O' and board[1][y-1] == ' '):
+            if(board[1][y])!=' ':
+                AI_pos =  '2'
+                attacking = True
+        if (board[3][y-1] == 'O' and board[4][y-1] == 'O' and board[5][y-1] == 'O' and board[2][y-1] == ' '):
+            if(board[2][y])!=' ':
+                AI_pos =  '3'
+                attacking = True
+        if (board[0][y-1] == 'O' and board[1][y-1] == 'O' and board[2][y-1] == 'O' and board[3][y-1] == ' '):
+            if(board[3][y])!=' ':
+                AI_pos =  '4'
+                attacking = True
+        if (board[1][y-1] == 'O' and board[2][y-1] == 'O' and board[3][y-1] == 'O' and board[4][y-1] == ' '):
+            if(board[4][y])!=' ':
+                AI_pos =  '5'
+                attacking = True
+        if (board[2][y-1] == 'O' and board[3][y-1] == 'O' and board[4][y-1] == 'O' and board[5][y-1] == ' '):
+            if(board[5][y])!=' ':
+                AI_pos =  '6'
+                attacking = True
+        if (board[3][y-1] == 'O' and board[4][y-1] == 'O' and board[5][y-1] == 'O' and board[6][y-1] == ' '):
+            if(board[6][y])!=' ': 
+                AI_pos =  '7'
+                attacking = True
+    
+    # Tung    
+    if (board[0][5] == 'O' and board[0][4] == 'O' and board[0][3] == 'O')or (board[0][4] == 'O' and board[0][3] == 'O' and board[0][2] == 'O')or(board[0][3] == 'O' and board[0][2] == 'O' and board[0][1] == 'O'):
+            AI_pos =  '1'
+            attacking = True
+    if (board[1][5] == 'O' and board[1][4] == 'O' and board[1][3] == 'O')or (board[1][4] == 'O' and board[1][3] == 'O' and board[1][2] == 'O')or(board[1][3] == 'O' and board[1][2] == 'O' and board[1][1] == 'O'):
+            AI_pos =  '2'
+            attacking = True
+    if (board[2][5] == 'O' and board[2][4] == 'O' and board[2][3] == 'O')or (board[2][4] == 'O' and board[2][3] == 'O' and board[2][2] == 'O')or(board[2][3] == 'O' and board[2][2] == 'O' and board[2][1] == 'O'):
+            AI_pos =  '3'
+            attacking = True
+    if (board[3][5] == 'O' and board[3][4] == 'O' and board[3][3] == 'O')or (board[3][4] == 'O' and board[3][3] == 'O' and board[3][2] == 'O')or(board[3][3] == 'O' and board[3][2] == 'O' and board[3][1] == 'O'):
+            AI_pos =  '4'
+            attacking = True
+    if (board[4][5] == 'O' and board[4][4] == 'O' and board[4][3] == 'O')or (board[4][4] == 'O' and board[4][3] == 'O' and board[4][2] == 'O')or(board[4][3] == 'O' and board[4][2] == 'O' and board[4][1] == 'O'):
+            AI_pos =  '5'
+            attacking = True
+    if (board[5][5] == 'O' and board[5][4] == 'O' and board[5][3] == 'O')or (board[5][4] == 'O' and board[5][3] == 'O' and board[5][2] == 'O')or(board[5][3] == 'O' and board[5][2] == 'O' and board[5][1] == 'O'):
+            AI_pos =  '6'
+            attacking = True
+    if (board[6][5] == 'O' and board[6][4] == 'O' and board[6][3] == 'O')or (board[6][4] == 'O' and board[6][3] == 'O' and board[6][2] == 'O')or(board[6][3] == 'O' and board[6][2] == 'O' and board[6][1] == 'O'):
+            AI_pos =  '7'
+            attacking = True
+            
+            
+    #R
+    for y in range(3):
+        if (board[1][y+2] == 'O' and board[2][y+1] == 'O' and board[3][y] == 'O' and board[0][y+3] == ' '):
+            if(board[0][y+4]) != ' ':
+                AI_pos =  '1'
+                attacking = True
+        if (board[2][y+2] == 'O' and board[3][y+1] == 'O' and board[4][y] == 'O' and board[1][y+3] == ' '):
+            if(board[1][y+4]) != ' ':
+                AI_pos =  '2'
+                attacking = True
+        if (board[3][y+2] == 'O' and board[4][y+1] == 'O' and board[5][y] == 'O' and board[2][y+3] == ' '):
+            if(board[2][y+4]) != ' ':
+                AI_pos =  '3'
+                attacking = True
+        if (board[4][y+2] == 'O' and board[5][y+1] == 'O' and board[6][y] == 'O' and board[3][y+3] == ' '):
+            if(board[3][y+4]) != ' ':
+                AI_pos =  '4'
+                attacking = True
+        if (board[0][y+3] == 'O' and board[1][y+2] == 'O' and board[2][y+1] == 'O' and board[3][y] == ' '):
+            if(board[3][y+1]) != ' ':
+                AI_pos =  '4'
+                attacking = True
+        if (board[1][y+3] == 'O' and board[2][y+2] == 'O' and board[3][y+1] == 'O' and board[4][y] == ' '):
+            if(board[4][y+1]) != ' ':
+                AI_pos =  '5'
+                attacking = True
+        if (board[2][y+3] == 'O' and board[3][y+2] == 'O' and board[4][y+1] == 'O' and board[5][y] == ' '):
+            if(board[5][y+1]) != ' ':
+                AI_pos =  '6'
+                attacking = True
+        if (board[3][y+3] == 'O' and board[4][y+2] == 'O' and board[5][y+1] == 'O' and board[6][y] == ' '):
+            if(board[6][y+1]) != ' ':
+                AI_pos =  '7'
+                attacking = True
+        
+    
+    #L
+    for y in range(3):
+        y=y+1
+        if (board[1][y] == 'O' and board[2][y+1] == 'O' and board[3][y+2] == 'O' and board[0][y-1] == ' '):
+            if(board[0][y]) != ' ':
+                AI_pos =  '1'
+                attacking = True
+        if (board[2][y] == 'O' and board[3][y+1] == 'O' and board[4][y+2] == 'O' and board[1][y-1] == ' '):
+            if(board[1][y]) != ' ':
+                AI_pos =  '2'
+                attacking = True
+        if (board[3][y] == 'O' and board[4][y+1] == 'O' and board[5][y+2] == 'O' and board[2][y-1] == ' '):
+            if(board[2][y]) != ' ':
+                AI_pos =  '3'
+                attacking = True
+        if (board[4][y] == 'O' and board[5][y+1] == 'O' and board[6][y+2] == 'O' and board[3][y-1] == ' '):
+            if(board[3][y]) != ' ':
+                AI_pos =  '4'
+                attacking = True
+        if (board[0][y-1] == 'O' and board[1][y] == 'O' and board[2][y+1] == 'O' and board[3][y+2] == ' '):
+            if(board[3][y+3]) != ' ':
+                AI_pos =  '4'
+                attacking = True
+        if (board[1][y-1] == 'O' and board[2][y] == 'O' and board[3][y+1] == 'O' and board[4][y+2] == ' '):
+            if(board[4][y+3]) != ' ':
+                AI_pos =  '5'
+                attacking = True
+        if (board[2][y-1] == 'O' and board[3][y] == 'O' and board[4][y+1] == 'O' and board[5][y+2] == ' '):
+            if(board[5][y+3]) != ' ':
+                AI_pos =  '6'
+                attacking = True
+        if (board[3][y-1] == 'O' and board[4][y] == 'O' and board[5][y+1] == 'O' and board[6][y+2] == ' '):
+            if(board[6][y+3]) != ' ':
+                AI_pos =  '7'
+                attacking = True
+    
+    
     return attacking, AI_pos
 def win (board):
     # horizontal
     for y in range(6):
         winning = []
         for x in range(7):
-            if board[x][y] != 'A':
+            if board[x-1][y-1] != 'A':
                 winning.append([board[x][y]])
         if len(winning) > 3:
-            for i in range(5):
+            for i in range(6):
                 if winning[i-1]==['X'] and winning[i]==['X'] and winning[i+1]==['X'] and winning[i+2]==['X']:
                     return True
                 if winning[i-1]==['O'] and winning[i]==['O'] and winning[i+1]==['O'] and winning[i+2]==['O']:
                     return True                   
         else:
             winning = []
+            return False
 
     # vertical
     for x in range(7):
@@ -261,7 +403,7 @@ def win (board):
                 if (winning[i-1]==['O'] and winning[i]==['O'] and winning[i+1]==['O'] and winning[i+2]==['O']):
                     return True                  
         else:
-            winning = []
+            return False
     
     if (board[0][3]=='X' and board[1][2]=='X' and board[2][1]=='X'and board[3][0]=='X'):
         return True
@@ -317,8 +459,8 @@ while True:
                         setMove(mainBoard, computerTile, AI_pos)
                     
                     elif  defending == False:
-                        move = getcommove(mainBoard, computerTile)
-                        setMove(mainBoard, computerTile,move)
+                        AI_pos = getcommove(mainBoard, computerTile)
+                        setMove(mainBoard, computerTile,AI_pos)
                         
                 if win(mainBoard) == True :
                     break

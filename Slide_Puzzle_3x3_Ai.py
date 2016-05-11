@@ -1,5 +1,4 @@
 import random
-import math
 
 _goal_state = [[1,2,3],
                [4,5,6],
@@ -29,7 +28,7 @@ class EightPuzzle:
         res = ''
         for row in range(3):
             res += ' '.join(map(str, self.adj_matrix[row]))
-            res += '\r\n'
+            res += '\r'
         return res
 
     def _clone(self):
@@ -180,7 +179,6 @@ def h_manhattan(puzzle):
                 lambda r, tr, c, tc: abs(tr - r) + abs(tc - c),
                 lambda t : t)
 
-    
 def h_default(puzzle):
     return 0
 
